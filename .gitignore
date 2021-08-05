@@ -1,0 +1,8 @@
+*.log
+.DS_Store
+.cache
+.env
+
+node_modules
+docs-build
+# dist
