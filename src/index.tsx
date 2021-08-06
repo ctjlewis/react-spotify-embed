@@ -1,14 +1,15 @@
 interface SpotifyProps {
   [key: string]: any;
+
   link: string;
-  width: number | string;
-  height: number | string;
-  frameBorder: number | string;
-  allow: string;
+  width?: number | string;
+  height?: number | string;
+  frameBorder?: number | string;
+  allow?: string;
 }
 
 const Spotify = ({
-  link = '',
+  link,
   width = 300,
   height = 380,
   frameBorder = 0,
