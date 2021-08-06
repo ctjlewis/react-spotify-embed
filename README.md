@@ -22,4 +22,4 @@ See [`example/`](example/).
 <Spotify wide link="https://open.spotify.com/track/5ihDGnhQgMA0F0tk9fNLlA?si=4472348a63dd4f83"/>
 ```
 
-![](https://i.imgur.com/QYAXhPe.png)
+![](https://i.imgur.com/uPuYOnz.png)
