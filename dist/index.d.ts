@@ -1,10 +1,11 @@
 /// <reference types="react" />
-declare const Spotify: ({ link, width, height, frameBorder, allow, ...props }: {
-    [x: string]: any;
-    link?: string | undefined;
-    width?: string | undefined;
-    height?: number | undefined;
-    frameBorder?: number | undefined;
-    allow?: string | undefined;
-}) => JSX.Element;
+interface SpotifyProps {
+    [key: string]: any;
+    link: string;
+    width: number | string;
+    height: number | string;
+    frameBorder: number | string;
+    allow: string;
+}
+declare const Spotify: ({ link, width, height, frameBorder, allow, ...props }: SpotifyProps) => JSX.Element;
 export default Spotify;
