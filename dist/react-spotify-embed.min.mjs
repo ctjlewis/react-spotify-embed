@@ -1,2 +1,2 @@
-import{jsx as e}from"react/jsx-runtime.js";export default({link:r,width:t=300,height:i=380,frameBorder:o=0,allow:d="encrypted-media",...a})=>{const m=new URL(r);return e("div",{children:e("iframe",Object.assign({src:`https://open.spotify.com/embed${m.pathname}`,width:t,height:i,frameBorder:o,allow:d},a),void 0)},void 0)};
+import{jsx as e}from"react/jsx-runtime.js";export default({link:t,style:r={},wide:i=!1,width:o=(i?"100%":300),height:a=(i?80:380),frameBorder:d=0,allow:m="encrypted-media",...s})=>{const n=new URL(t);return e("iframe",Object.assign({style:{borderRadius:8,...r},src:`https://open.spotify.com/embed${n.pathname}`,width:o,height:a,frameBorder:d,allow:m},s),void 0)};
 //# sourceMappingURL=react-spotify-embed.min.mjs.map

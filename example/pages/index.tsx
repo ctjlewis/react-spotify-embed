@@ -20,6 +20,9 @@ const Home: NextPage = () => {
           {/* Album. */}
           <Spotify link="https://open.spotify.com/album/0fUy6IdLHDpGNwavIlhEsl?si=mTiITmlHQpaGkoivGTv8Jw" />
         </div>
+        <div style={{ height: 48 }} />
+        {/* Wide player. */}
+        <Spotify wide link="https://open.spotify.com/track/5ihDGnhQgMA0F0tk9fNLlA?si=4472348a63dd4f83"/>
       </main>
     </div>
   )

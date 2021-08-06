@@ -12,10 +12,14 @@ widget can also be overridden (see
 See [`example/`](example/).
 
 ```tsx
-{/* Single track. */}
+// Displaying a single track.
 <Spotify link="https://open.spotify.com/track/5ihDGnhQgMA0F0tk9fNLlA?si=4472348a63dd4f83" />
-{/* Album. */}
+
+// Displaying an album.
 <Spotify link="https://open.spotify.com/album/0fUy6IdLHDpGNwavIlhEsl?si=mTiITmlHQpaGkoivGTv8Jw" />
+
+// Using `wide` attribute.
+<Spotify wide link="https://open.spotify.com/track/5ihDGnhQgMA0F0tk9fNLlA?si=4472348a63dd4f83"/>
 ```
 
-![](https://i.imgur.com/E84IAJf.png)
+![](https://i.imgur.com/QYAXhPe.png)
