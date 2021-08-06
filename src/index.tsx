@@ -25,15 +25,16 @@ const Spotify = ({
   // https://open.spotify.com/track/1KFxcj3MZrpBGiGA8ZWriv?si=f024c3aa52294aa1
   return (
     <iframe
-      style={{
-        borderRadius: 8,
-        ...style,
-      }}
+      title="Spotify Web Player"
       src={`https://open.spotify.com/embed${url.pathname}`}
       width={width}
       height={height}
       frameBorder={frameBorder}
       allow={allow}
+      style={{
+        borderRadius: 8,
+        ...style,
+      }}
       {...props}
     />
   );
