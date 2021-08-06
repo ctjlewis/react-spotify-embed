@@ -18,4 +18,4 @@ See [`example/`](example/).
 <Spotify link="https://open.spotify.com/album/0fUy6IdLHDpGNwavIlhEsl?si=mTiITmlHQpaGkoivGTv8Jw" />
 ```
 
-![](assets/example.png)
+![](https://i.imgur.com/E84IAJf.png)
