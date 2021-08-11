@@ -1,6 +1,9 @@
 {
-  "version": "0.2.2",
+  "version": "0.2.3",
   "license": "MIT",
+  "repository": {
+    "url": "https://github.com/ctjlewis/react-spotify-embed"
+  },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "exports": {
