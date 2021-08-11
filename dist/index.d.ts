@@ -1,4 +1,4 @@
-import { HTMLAttributes } from "react";
+import { HTMLAttributes } from 'react';
 interface SpotifyProps extends HTMLAttributes<HTMLIFrameElement> {
     [key: string]: any;
     link: string;
