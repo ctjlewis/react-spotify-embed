@@ -1,0 +1,1 @@
+import p from"react";const f=({link:e,style:r={},wide:t=!1,width:i=t?"100%":300,height:o=t?80:380,frameBorder:n=0,allow:s="encrypted-media",...m})=>{const a=new URL(e);return p.createElement("iframe",{title:"Spotify Web Player",src:`https://open.spotify.com/embed${a.pathname}`,width:i,height:o,frameBorder:n,allow:s,style:{borderRadius:8,...r},...m})};var g=f;export{g as default};

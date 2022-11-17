@@ -1,35 +1,32 @@
 {
-  "version": "0.2.3",
+  "version": "1.0.1",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/ctjlewis/react-spotify-embed"
   },
-  "main": "./dist/index.cjs",
-  "module": "./dist/index.mjs",
+  "type": "module",
+  "platform": "node",
+  "types": "dist/index.d.ts",
+  "module": "./dist/index.js",
   "exports": {
     "./package.json": "./package.json",
-    ".": {
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.cjs"
-    }
+    ".": "./dist/index.js",
+    "./*": "./dist/*/index.js"
   },
   "typings": "dist/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "engines": {
     "node": ">=14"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "posttest": "node test/import.mjs && node test/require.cjs",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
+    "dev": "tsmodule dev",
+    "build": "tsmodule build",
+    "test": "ava",
+    "pretest": "tsmodule build",
+    "prepublishOnly": "yarn test",
+    "lint": "eslint src --fix"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -59,8 +56,14 @@
   ],
   "devDependencies": {
     "@size-limit/preset-small-lib": "^5.0.2",
+    "@tsmodule/tsmodule": "^40.10.0",
+    "@types/node": "^18.11.9",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.43.0",
+    "@typescript-eslint/parser": "^5.43.0",
+    "ava": "^5.1.0",
+    "eslint": "^8.27.0",
     "husky": "^7.0.1",
     "jest-environment-jsdom": "^27.0.6",
     "react": "^17.0.2",
@@ -68,6 +71,12 @@
     "size-limit": "^5.0.2",
     "tsdx": "ctjlewis/tsdx",
     "tslib": "^2.3.0",
-    "typescript": "^4.3.5"
-  }
+    "typescript": "^4.9.3"
+  },
+  "keywords": [
+    "react",
+    "spotify",
+    "embed",
+    "nextjs"
+  ]
 }
