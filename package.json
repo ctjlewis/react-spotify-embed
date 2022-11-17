@@ -1,5 +1,7 @@
 {
-  "version": "1.0.3",
+  "name": "react-spotify-embed",
+  "description": "A component that renders the public Spotify preview for a song.",
+  "version": "1.0.4",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/ctjlewis/react-spotify-embed"
@@ -42,8 +44,6 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "react-spotify-embed",
-  "author": "Christian Lewis",
   "size-limit": [
     {
       "path": "dist/react-spotify-embed.production.min.cjs",
