@@ -1,7 +1,7 @@
 {
   "name": "react-spotify-embed",
-  "description": "A simple component for embedding a Spotify song or album preview.",
-  "version": "2.0.2",
+  "description": "A simple React component for embedding a Spotify song or album preview.",
+  "version": "2.0.3",
   "license": "MIT",
   "repository": {
     "url": "https://github.com/ctjlewis/react-spotify-embed"
