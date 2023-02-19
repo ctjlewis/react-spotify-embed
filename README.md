@@ -23,7 +23,7 @@ widget can also be overridden (see
 
 **Demo: Normal song link, Album link, and `wide`**
 
-<img width="400px" height="auto" src="public/screenshot.png">
+<img width="400px" height="auto" src="https://github.com/ctjlewis/react-spotify-embed/raw/master/public/screenshot.png">
 
 ### Example
 
