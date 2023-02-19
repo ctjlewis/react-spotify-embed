@@ -7,13 +7,15 @@
     "url": "https://github.com/ctjlewis/react-spotify-embed"
   },
   "type": "module",
-  "platform": "node",
+  "platform": "browser",
   "types": "dist/index.d.ts",
   "module": "./dist/index.js",
   "exports": {
     "./package.json": "./package.json",
     ".": "./dist/index.js",
-    "./*": "./dist/*/index.js"
+    "./*": "./dist/components/*/index.js",
+    "./styles": "./dist/bundle.css",
+    "./styles/*": "./dist/components/*/index.css"
   },
   "typings": "dist/index.d.ts",
   "files": [
@@ -23,20 +25,17 @@
     "node": ">=14"
   },
   "scripts": {
-    "dev": "tsmodule dev",
-    "build": "tsmodule build",
+    "export": "tsmodule build",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --fix",
+    "pretest": "yarn build",
     "test": "ava",
-    "pretest": "tsmodule build",
-    "prepublishOnly": "yarn test",
-    "lint": "eslint src --fix"
+    "prepublishOnly": "yarn test && yarn export"
   },
   "peerDependencies": {
     "react": ">=16"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
   },
   "prettier": {
     "printWidth": 80,
@@ -55,19 +54,32 @@
     }
   ],
   "devDependencies": {
-    "@size-limit/preset-small-lib": "^5.0.2",
-    "@tsmodule/tsmodule": "^40.10.0",
-    "@types/node": "^18.11.9",
-    "@types/react": "^17.0.15",
-    "@types/react-dom": "^17.0.9",
-    "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "@typescript-eslint/parser": "^5.43.0",
-    "ava": "^5.1.0",
-    "eslint": "^8.27.0",
-    "husky": "^7.0.1",
-    "jest-environment-jsdom": "^27.0.6",
-    "size-limit": "^5.0.2",
-    "typescript": "^4.9.3"
+    "@size-limit/preset-small-lib": "^8.2.4",
+    "@tsmodule/react": "^12.0.0",
+    "@tsmodule/tsmodule": "^41.41.0",
+    "@types/node": "^18.14.0",
+    "@types/react": "^18.0.23",
+    "@types/react-dom": "^18.0.7",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.52.0",
+    "autoprefixer": "^10.4.13",
+    "ava": "^5.2.0",
+    "cssnano": "^5.1.15",
+    "eslint": "^8.0.1",
+    "eslint-config-next": "^13.1.6",
+    "eslint-config-standard-with-typescript": "^34.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "jest-environment-jsdom": "^29.4.3",
+    "next": "^13.1.6",
+    "postcss": "^8.4.21",
+    "postcss-import": "^15.1.0",
+    "size-limit": "^8.2.4",
+    "tailwindcss": "^3.2.7",
+    "typescript": "^4.9.5"
   },
   "keywords": [
     "react",
@@ -78,5 +90,6 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "style": "dist/bundle.css"
 }

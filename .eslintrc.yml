@@ -1,0 +1,33 @@
+env:
+  browser: true
+  es2021: true
+  node: true
+
+extends:
+  - plugin:react/recommended
+  - standard-with-typescript
+  - next
+
+overrides: []
+parserOptions:
+  ecmaVersion: latest
+  sourceType: module
+  project:
+    - tsconfig.json
+    - tsconfig.tests.json
+
+plugins:
+  - react
+
+rules:
+  "@typescript-eslint/explicit-function-return-type":
+    - off
+  "@typescript-eslint/quotes":
+    - error
+    - double
+  "@typescript-eslint/semi":
+    - error
+    - always
+  "react/jsx-indent":
+    - error
+    - 2

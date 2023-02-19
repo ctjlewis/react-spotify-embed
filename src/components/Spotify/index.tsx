@@ -1,17 +1,17 @@
-import { HTMLAttributes } from "react";
+import { type HTMLAttributes } from "react";
 
 interface SpotifyProps extends HTMLAttributes<HTMLIFrameElement> {
-  [key: string]: any;
+  [key: string]: any
 
-  link: string;
-  wide?: boolean;
-  width?: number | string;
-  height?: number | string;
-  frameBorder?: number | string;
-  allow?: string;
+  link: string
+  wide?: boolean
+  width?: number | string
+  height?: number | string
+  frameBorder?: number | string
+  allow?: string
 }
 
-const Spotify = ({
+export const Spotify = ({
   link,
   style = {},
   wide = false,
@@ -33,11 +33,9 @@ const Spotify = ({
       allow={allow}
       style={{
         borderRadius: 8,
-        ...style,
+        ...style
       }}
       {...props}
     />
   );
 };
-
-export default Spotify;
