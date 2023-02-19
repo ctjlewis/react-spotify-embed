@@ -5,7 +5,7 @@ Spotify, click ••• > Copy Link, and paste it in the `<Spotify link={...}>`
 
 Any link should work (albums, songs, etc.). All other props on the Spotify embed
 widget can also be overridden (see
-[here](https://developer.spotify.com/documentation/widgets/generate/embed/)).
+[here](https://developer.spotify.com/documentation/embeds/)).
 
 ### Example
 
