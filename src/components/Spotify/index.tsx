@@ -23,6 +23,8 @@ export const Spotify = ({
 }: SpotifyProps) => {
   const url = new URL(link);
   // https://open.spotify.com/track/1KFxcj3MZrpBGiGA8ZWriv?si=f024c3aa52294aa1
+  // Remove any additional path segments
+  url.pathname = url.pathname.replace(/\/intl-\w+\//, "/");
   return (
     <iframe
       title="Spotify Web Player"
