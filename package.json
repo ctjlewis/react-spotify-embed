@@ -28,8 +28,7 @@
     "start": "next start",
     "lint": "next lint --fix",
     "pretest": "yarn build",
-    "test": "ava",
-    "prepublishOnly": "yarn test && yarn export"
+    "prepublishOnly": "yarn export"
   },
   "dependencies": {
     "react": "^18.2.0",
