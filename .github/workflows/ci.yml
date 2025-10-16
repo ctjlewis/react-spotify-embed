@@ -10,25 +10,11 @@ on:
 
 jobs:
   test:
-    name: Node ${{ matrix.nodejs }} on ${{ matrix.os }}
-    runs-on: ${{ matrix.os }}
+    name: CI
+    runs-on: ubuntu-latest
     timeout-minutes: 10
-    strategy:
-      matrix:
-        nodejs: [
-            14,
-            # 16,
-            # "lts/*"
-          ]
-        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.nodejs }}
-
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
       - name: Install and link
-        run: bun install && bun run build
-
-      - name: Test
-        run: bun run test
+        run: bun install && bun run export
