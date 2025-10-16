@@ -14,7 +14,6 @@ parserOptions:
   sourceType: module
   project:
     - tsconfig.json
-    - tsconfig.tests.json
 
 plugins:
   - react

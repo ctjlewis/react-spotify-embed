@@ -22,50 +22,55 @@
     "dist"
   ],
   "scripts": {
-    "export": "tsmodule build",
+    "export": "bun types && bun build src/index.ts --production --outdir dist",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix",
-    "pretest": "yarn build",
-    "prepublishOnly": "yarn export"
+    "types": "bun tsc src/index.ts -d --emitDeclarationOnly --outDir dist --jsx react-jsx",
+    "pretest": "bun run build",
+    "prepublishOnly": "bun run export"
   },
   "peerDependencies": {
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19"
   },
   "peerDependenciesMeta": {
-    "react": { "optional": false },
-    "react-dom": { "optional": false }
+    "react": {
+      "optional": false
+    },
+    "react-dom": {
+      "optional": false
+    }
   },
   "devDependencies": {
+    "@size-limit/preset-small-lib": "^8.2.6",
+    "@types/bun": "latest",
+    "@types/node": "^18.19.130",
+    "@types/react": "^18.3.26",
+    "@types/react-dom": "^18.3.7",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "autoprefixer": "^10.4.21",
+    "ava": "^5.3.1",
+    "cssnano": "^5.1.15",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^13.5.11",
+    "eslint-config-standard-with-typescript": "^34.0.1",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-promise": "^6.6.0",
+    "eslint-plugin-react": "^7.37.5",
+    "husky": "^8.0.3",
+    "jest-environment-jsdom": "^29.7.0",
+    "next": "^15.5.5",
+    "postcss": "^8.5.6",
+    "postcss-import": "^15.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@size-limit/preset-small-lib": "^8.2.4",
-    "@tsmodule/react": "^12.0.0",
-    "@tsmodule/tsmodule": "^41.41.0",
-    "@types/node": "^18.14.0",
-    "@types/react": "^18.0.23",
-    "@types/react-dom": "^18.0.7",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.52.0",
-    "autoprefixer": "^10.4.13",
-    "ava": "^5.2.0",
-    "cssnano": "^5.1.15",
-    "eslint": "^8.0.1",
-    "eslint-config-next": "^13.1.6",
-    "eslint-config-standard-with-typescript": "^34.0.0",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0",
-    "eslint-plugin-promise": "^6.0.0",
-    "eslint-plugin-react": "^7.32.2",
-    "husky": "^8.0.3",
-    "jest-environment-jsdom": "^29.4.3",
-    "next": "^13.1.6",
-    "postcss": "^8.4.21",
-    "postcss-import": "^15.1.0",
-    "tailwindcss": "^3.2.7",
-    "typescript": "^4.9.5"
+    "tailwindcss": "^3.4.18",
+    "typescript": "^5.9.3",
+    "undici-types": "^7.16.0"
   },
   "keywords": [
     "react",
@@ -75,5 +80,6 @@
   ],
   "engines": {
     "node": ">=14"
-  }
+  },
+  "private": true
 }
