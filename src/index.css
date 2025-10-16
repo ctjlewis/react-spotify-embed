@@ -14,8 +14,6 @@
 @import "tailwindcss/utilities";
 @import "tailwindcss/components";
 
-@import "@tsmodule/react";
-
 body {
   background: black;
 }
