@@ -24,7 +24,7 @@
   "scripts": {
     "export": "bun types && bun build src/index.ts --production --outdir dist",
     "dev": "next dev",
-    "build": "next build",
+    "build": "bun export && next build",
     "start": "next start",
     "lint": "next lint --fix",
     "types": "bun tsc src/index.ts -d --emitDeclarationOnly --outDir dist --jsx react-jsx",
