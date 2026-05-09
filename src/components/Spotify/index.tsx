@@ -1,8 +1,6 @@
 import { type HTMLAttributes } from "react";
 
-interface SpotifyProps extends HTMLAttributes<HTMLIFrameElement> {
-  [key: string]: any
-
+interface SpotifyProps extends HTMLAttributes<HTMLSpanElement> {
   link: string
   wide?: boolean
   width?: number | string
@@ -22,22 +20,28 @@ export const Spotify = ({
   ...props
 }: SpotifyProps) => {
   const url = new URL(link);
-  // https://open.spotify.com/track/1KFxcj3MZrpBGiGA8ZWriv?si=f024c3aa52294aa1
-  // Remove any additional path segments
   url.pathname = url.pathname.replace(/\/intl-\w+\//, "/");
   return (
-    <iframe
-      title="Spotify Web Player"
-      src={`https://open.spotify.com/embed${url.pathname}`}
-      width={width}
-      height={height}
-      frameBorder={frameBorder}
-      allow={allow}
+    <span
       style={{
+        display: "inline-block",
+        overflow: "hidden",
         borderRadius: 8,
-        ...style
+        lineHeight: 0,
+        width,
+        ...style,
       }}
       {...props}
-    />
+    >
+      <iframe
+        title="Spotify Web Player"
+        src={`https://open.spotify.com/embed${url.pathname}`}
+        width={width}
+        height={height}
+        frameBorder={frameBorder}
+        allow={allow}
+        style={{ display: "block", border: 0 }}
+      />
+    </span>
   );
 };
