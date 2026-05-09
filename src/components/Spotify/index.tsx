@@ -1,12 +1,8 @@
-import { type HTMLAttributes } from "react";
+import { type IframeHTMLAttributes } from "react";
 
-interface SpotifyProps extends HTMLAttributes<HTMLSpanElement> {
+interface SpotifyProps extends IframeHTMLAttributes<HTMLIFrameElement> {
   link: string
   wide?: boolean
-  width?: number | string
-  height?: number | string
-  frameBorder?: number | string
-  allow?: string
 }
 
 export const Spotify = ({
@@ -15,33 +11,26 @@ export const Spotify = ({
   wide = false,
   width = wide ? "100%" : 300,
   height = wide ? 80 : 380,
-  frameBorder = 0,
   allow = "encrypted-media",
   ...props
 }: SpotifyProps) => {
   const url = new URL(link);
   url.pathname = url.pathname.replace(/\/intl-\w+\//, "/");
   return (
-    <span
+    <iframe
+      title="Spotify Web Player"
+      src={`https://open.spotify.com/embed${url.pathname}`}
+      width={width}
+      height={height}
+      allow={allow}
       style={{
-        display: "inline-block",
-        overflow: "hidden",
+        border: 0,
         borderRadius: 8,
-        lineHeight: 0,
-        width,
+        clipPath: "inset(0 round 8px)",
+        colorScheme: "normal",
         ...style,
       }}
       {...props}
-    >
-      <iframe
-        title="Spotify Web Player"
-        src={`https://open.spotify.com/embed${url.pathname}`}
-        width={width}
-        height={height}
-        frameBorder={frameBorder}
-        allow={allow}
-        style={{ display: "block", border: 0 }}
-      />
-    </span>
+    />
   );
 };
